@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  kombat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python kombat/manage.py runserver 0.0.0.0:5050
+    volumes:
+      - ./kombat/db.sqlite3:/kombat/kombat/db.sqlite3
+    ports:
+      - 5050:5050
